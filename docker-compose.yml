@@ -1,0 +1,120 @@
+version: '2.4'
+
+services:
+  server:
+    image: server:latest
+    tty: true        # docker run -t
+    networks:
+        docker-network-test:
+            ipv4_address: 172.20.0.2
+    volumes:
+      - ./LOGS/server:/usr/app/src/logs
+  node1:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node1:/usr/app/src/node_files
+      - ./LOGS/node1:/usr/app/src/logs
+
+  node2:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node2:/usr/app/src/node_files
+      - ./LOGS/node2:/usr/app/src/logs
+
+  node3:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node3:/usr/app/src/node_files
+      - ./LOGS/node3:/usr/app/src/logs
+
+  node4:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node4:/usr/app/src/node_files
+      - ./LOGS/node4:/usr/app/src/logs
+
+  node5:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node5:/usr/app/src/node_files
+      - ./LOGS/node5:/usr/app/src/logs
+
+  node6:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node6:/usr/app/src/node_files
+      - ./LOGS/node6:/usr/app/src/logs
+
+  node7:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node7:/usr/app/src/node_files
+      - ./LOGS/node7:/usr/app/src/logs
+
+  node8:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node8:/usr/app/src/node_files
+      - ./LOGS/node8:/usr/app/src/logs
+
+  node9:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node9:/usr/app/src/node_files
+      - ./LOGS/node9:/usr/app/src/logs
+
+  node10:
+    image: node:latest
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    networks:
+        - docker-network-test
+    volumes:
+      - ./VOLUMES/node10:/usr/app/src/node_files
+      - ./LOGS/node10:/usr/app/src/logs
+
+networks:
+    docker-network-test:
+      driver: bridge
+      ipam:
+        driver: default
+        config:
+          - subnet: 172.20.0.0/16
+            gateway: 172.20.0.1
+
