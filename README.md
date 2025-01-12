@@ -51,14 +51,6 @@ The resulting system successfully supports:
 
 ---
 
-## ⚙️ System Architecture
-
-The system architecture includes:
-- A **central tracker** for managing peers and file metadata (called the *server*).
-- Multiple **peers** capable of acting as both file providers and requesters (called *nodes*).
-- An efficient communication protocol for file sharing and peer coordination.
-
-
 ## 🛠️ System Architecture
 
 The system is designed as a **distributed peer-to-peer network** for file sharing. It consists of the following key components and their interactions:
